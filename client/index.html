@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="style.css" rel="stylesheet">
+		<title>
+			Contact Management
+		</title>
+	</head>
+	<body>
+		<header>
+			<h1>Contact Management System<h1>
+		</header>
+		<section>
+			<form onsubmit="return addcontact()">
+			<div class="grouptwo fnone">
+				<div class="singleone fleft">
+					<label for="fullname">Fullname</label><br/>
+					<input type="text" id="fullname" placeholder="Fullname" name="fullname">
+				</div>
+				<div class="singleone fleft">
+					<label for="phone">Phone</label><br/>
+					<input type="tel" id="phone" placeholder="Phone" name="phone">
+				</div>
+			</div>
+			<br/>&nbsp;<br/>
+			<div class="grouptwo fnone">
+				<div class="singleone fleft">
+					<label for="email">Email</label><br/>
+					<input type="email" id="email" placeholder="Email" name="email">
+				</div>
+				<div class="singleone fleft">
+					<label for="address">Address</label><br/>
+					<input type="text" id="address" placeholder="Address" name="address">
+				</div>
+			</div>
+				<button>ADD CONTACT</button>
+			</form>
+		</section>
+		<script src="app.js"></script>
+	</body>
+	</html>

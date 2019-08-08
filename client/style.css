@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+}
+header{
+    border-bottom: 5px solid navy;
+    margin:20px 0;
+}
+button{
+    margin:20px 0;
+    padding:10px 5px; 
+    border-style: none;
+    border: 2px solid navy;
+    color:navy;
+    background: #fff;
+    font-weight: 600;
+    margin-left: 20px;
+}
+h1{
+    color:navy;
+}
+label{
+    font-weight: 600;
+}
+input{
+    padding:15px;
+    width:calc(100% - 54px);
+    font-size: 15px;
+    margin:10px;
+}
+.grouptwo{
+    width:100%;
+    margin: auto;
+    
+}
+.singleone{
+    width: 50%;
+    
+}
+.fnone{
+    float:none;
+    clear:both;
+}
+.fleft{
+    float:left;
+}
