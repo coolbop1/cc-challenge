@@ -11,7 +11,19 @@ const addcontact = () => {
  })
  .then((res)=>res.json())
  .then((data)=>{
- console.log(data.data)
+ 		let alertbox = document.getElementById("alert");
+ 	if(data.status == "success"){
+ 	alertbox.classList.replace("splace","success");
+ 	alertbox.classList.replace("hide","show");
+ 	alertbox.innerHTML = "Contact added successfully";
+ 	setTimeout(()=>{
+ 		alertbox.classList.replace("success","splace");
+ 	alertbox.classList.replace("show","hide");
+ 	
+ 	},2000)
+ 		
+ 	}
+ 
  })
  .catch((e)=>console.log(e));
  return false;
