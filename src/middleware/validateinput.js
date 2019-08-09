@@ -1,8 +1,9 @@
+import jwt from "jsonwebtoken";
 
 module.exports = {
     validateinputs : (req,res,next) => {
-   let reqBody = Object.keys(JSON.parse(req.body));
-   let inputFields = JSON.parse(req.body);
+   let reqBody = Object.keys(req.body);
+   let inputFields = req.body;
 //console.log(reqBody[0]);
    
    let errorMessage =[]
@@ -18,8 +19,27 @@ module.exports = {
        //console.log(reply);
        return;
    }else{	
-   req.body = JSON.parse(req.body);	
+   req.body = req.body;	
        next();
    }}
+   ,
+   savedData: function (req, res, next) { 
+		const bearerHeader = req.headers["authorization"];
+		if (typeof bearerHeader !== "undefined") {  
+		const berarer = bearerHeader.split(" "); 
+		const bearerToken = berarer[1]; 
+		req.token = bearerToken;
+		jwt.verify(req.token, "ourlittlesecret", function(err, data) {
+			if (err) {
+				req.token={user:{contact:[]}};
+                next();
+		}else{
+            req.token=data;
+			next();
+		}; });
+        } else {  req.token={user:{contact:[]}};
+        next();
+    }
+	}
 }
    

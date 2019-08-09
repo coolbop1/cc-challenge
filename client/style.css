@@ -8,14 +8,18 @@ header{
     margin:20px 0;
     
 }
+a{
+    text-decoration: none;
+}
 #htag{
 	position:absolute;
-	bottom:-4px;
+	top:-20px;
 	right:10px;
 	color:white;
 	background:navy;
 	padding:10px;
-	min-width:50px;
+    min-width:50px;
+    cursor:pointer;
 }
 button{
     margin:20px 0;
@@ -26,6 +30,10 @@ button{
     background: #fff;
     font-weight: 600;
     margin-left: 20px;
+}
+button:hover{
+    color:#fff;
+    background: navy;
 }
 h1{
     color:navy;
@@ -70,7 +78,7 @@ input{
 	width:calc(100% - 120px);
 	padding:10px;
 }
-.formsection{
+section{
 	position:relative;
 }
 .success{

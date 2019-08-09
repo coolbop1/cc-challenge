@@ -7,12 +7,14 @@ const addcontact = () => {
     console.log(name)
     fetch("/api/contact",{
     method:"POST",
-    body:JSON.stringify({"name" : name,"email" : email, "phone" : phone, "address" : address})
+	body:JSON.stringify({"name" : name,"email" : email, "phone" : phone, "address" : address}),
+	headers:new Headers({"Content-Type":"application/json; charset=UTF-8","Authorization":"Bearer "+localStorage.getItem('allcontacts')}),
  })
  .then((res)=>res.json())
  .then((data)=>{
  		let alertbox = document.getElementById("alert");
  	if(data.status == "success"){
+	window.localStorage.setItem('allcontacts', data.token);
  	alertbox.classList.replace("splace","success");
  	alertbox.classList.replace("hide","show");
  	alertbox.innerHTML = "Contact added successfully";
@@ -25,6 +27,8 @@ const addcontact = () => {
  	}
  
  })
- .catch((e)=>console.log(e));
+ .catch(()=>{
+	 console.log("error")
+ });
  return false;
 }

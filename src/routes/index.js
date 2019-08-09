@@ -1,7 +1,6 @@
 import express from "express";
-import {validateinputs} from "../middleware/validateinput";
+import {validateinputs,savedData} from "../middleware/validateinput";
 import {maketoken} from "../controllers"
-import jwt from "jsonwebtoken";
 import bodyParser from "body-parser";
 const route = express.Router();
 
@@ -16,6 +15,6 @@ const route = express.Router();
 
 let contact = [];
 
-route.post("/api/contact",validateinputs,maketoken);
+route.post("/api/contact",validateinputs,savedData,maketoken);
 
  module.exports = route;
