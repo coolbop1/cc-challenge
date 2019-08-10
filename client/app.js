@@ -23,6 +23,10 @@ const addcontact = () => {
  	setTimeout(()=>{
  		alertbox.classList.replace("success","splace");
  	alertbox.classList.replace("show","hide");
+ 	    document.getElementById("fullname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("address").value = "";
  	
  	},2000)
  		
