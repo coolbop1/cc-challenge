@@ -1,0 +1,132 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+}
+header{
+    border-bottom: 5px solid navy;
+    margin:20px 0;
+    
+}
+a{
+	text-decoration:none;
+	cursor:pointer;
+}
+#htag{
+	position:absolute;
+	top:-24px;
+	right:10px;
+	color:white;
+	background:navy;
+	padding:10px;
+	min-width:50px;
+	cursor:pointer;
+}
+#add{
+    margin:20px 0;
+    padding:10px 5px; 
+    border-style: none;
+    border: 2px solid navy;
+    color:navy;
+    background: #fff;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#add:hover{
+	color:#fff;
+ background: navy;
+}
+#remove{
+			margin:20px 0;
+    padding:10px 5px; 
+    border-style: none;
+    border: 2px solid red;
+    color:red;
+    background: #fff;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#remove:hover{
+	color:#fff;
+ background: red;
+}
+h1{
+    color:navy;
+}
+label{
+    font-weight: 600;
+}
+input{
+    padding:15px;
+    width:calc(100% - 54px);
+    font-size: 15px;
+    margin:10px;
+}
+.grouptwo{
+    width:100%;
+    margin: auto;
+    
+}
+.singleone{
+    width: 50%;
+    
+}
+.fnone{
+    float:none;
+    clear:both;
+}
+.fleft{
+    float:left;
+}
+.hide {
+	display:none;
+}
+.show{
+	display:block;
+}
+.fxtop{
+	position:fixed;
+	top:50px;
+	border-radius:5px;
+	text-align:center;
+	right:50px;
+	width:calc(100% - 120px);
+	padding:10px;
+}
+#sect{
+	position:relative;
+}
+.success{
+	background:#00ff00;
+	color:black;
+}
+.warn{
+	background:#ff0000;
+	color:black;
+}
+.single{
+	border:2px solid #dfe2db;
+	background:white;
+	position:relative;
+	padding:10px;
+	width:calc(100% - 120px);
+	left:50px;
+	float:none;
+	clear:both;
+	border-radius:5px;
+}
+#onecontact{
+	padding-top:50px;
+}
+table{
+	width:100%;
+}
+td{
+	border:1px solid #dfe2db;
+}
+@media only screen and (max-width:768px){
+	.singleone{
+    width: 100%;
+    
+}
+}
