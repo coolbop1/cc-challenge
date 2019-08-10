@@ -21,6 +21,7 @@ a{
 	padding:10px;
 	min-width:50px;
 	cursor:pointer;
+
 }
 button{
 			min-width:150px;
@@ -95,6 +96,7 @@ input{
 	right:50px;
 	width:calc(100% - 120px);
 	padding:10px;
+		z-index:1;
 }
 #sect{
 	position:relative;
