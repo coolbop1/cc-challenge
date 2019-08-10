@@ -22,7 +22,8 @@ a{
 	min-width:50px;
 	cursor:pointer;
 }
-#add{
+button{
+			min-width:150px;
     margin:20px 0;
     padding:10px 5px; 
     border-style: none;
@@ -32,7 +33,7 @@ a{
     font-weight: 600;
     margin-left: 20px;
 }
-#add:hover{
+button:hover{
 	color:#fff;
  background: navy;
 }
@@ -61,6 +62,8 @@ input{
     width:calc(100% - 54px);
     font-size: 15px;
     margin:10px;
+    border-style:none;
+    border:2px solid #dfe2db;
 }
 .grouptwo{
     width:100%;

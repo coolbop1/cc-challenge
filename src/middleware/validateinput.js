@@ -1,6 +1,10 @@
 import jwt from "jsonwebtoken";
 
 module.exports = {
+	editaction : (req,res,next) => {
+		req.action = "edit";
+		next();
+	},
 	delaction : (req,res,next) => {
 		req.action = "del";
 		next();

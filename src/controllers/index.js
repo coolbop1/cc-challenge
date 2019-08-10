@@ -61,12 +61,29 @@ addToArray()
    	let {contact} =  req.token.user;
    	let found = contact.find(u => {return u.id == req.search;});
 if(found){
-  // 	console.log(found);
+  if(req.action && req.action == "edit"){
+  	
+  	found.name = req.body.name;
+  	found.email = req.body.email;
+  	found.phone = req.body.phone;
+  	found.address = req.body.address;
+  	
+  	let contactss = {
+					contact : contact
+				}
+		let newToken = jwt.sign({user : contactss}, "ourlittlesecret", { expiresIn: "24h" });//expires in 24 hours }
+  	res.status(200).send({
+   		status:"success",
+   		data:found,
+   		newtoken : newToken
+   		})
+  }else{
    res.status(200).send({
    		status:"success",
    		data:found
    		
    		});	
+   		}
    		
    		}
    
