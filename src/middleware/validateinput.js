@@ -1,16 +1,36 @@
 import jwt from "jsonwebtoken";
 
 module.exports = {
+	delaction : (req,res,next) => {
+		req.action = "del";
+		next();
+	},
+	getaction : (req,res,next) => {
+		req.action = "get";
+		next();
+	},
+	validateparam : (req,res,next) => {
+		
+		if(isNaN(req.params.contactid)){
+			console.log(req.params.contactid)
+			  let reply = {"status":409,"error" : "not a number"};
+			  res.status(409).send(reply);
+		}else{
+			req.search = req.params.contactid;
+			next()
+		}
+	},
+  
     validateinputs : (req,res,next) => {
    let reqBody = Object.keys(req.body);
    let inputFields = req.body;
-//console.log(reqBody[0]);
+//console.log();
    
    let errorMessage =[]
    for(let bt = 0; bt < reqBody.length && errorMessage.length < 1; bt++){
        let inputs = reqBody[bt]  
 
-       if(typeof reqBody[bt] === "undefined" || reqBody[bt].trim() == "")
+       if(typeof inputFields[reqBody[bt]] === "undefined" || inputFields[reqBody[bt]].trim() == "")
            errorMessage.push(reqBody[bt].replace("_"," ")+" is required");
        
    }		

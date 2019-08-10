@@ -13,8 +13,10 @@
 			<a href="index.html"><h1>Contact Management <h1></a>
 				
 		</header>
-		<section id="formsection">
+		<div id="sect">
 			<div id="htag" class="view">view contacts</div>
+		<section id="formsection" class="show">
+			 
 			<div id="alert" class="fxtop splace bneutral hide">heklo</div>
 			<form onsubmit="return addcontact()">
 			<div class="grouptwo fnone">
@@ -38,9 +40,22 @@
 					<input type="text" id="address" placeholder="Address" name="address">
 				</div>
 			</div>
-				<button>ADD CONTACT</button>
+				<button id="add">ADD CONTACT</button>
 			</form>
 		</section>
+		<section id="listsection" class="hide">
+			<h2>All Contacts</h2>
+			<div id="init">
+				
+			</div>
+		</section>
+		<section id="singlesection" class="hide">
+			<div id="onecontact">
+				
+			</div>
+			<button id="remove">DELETE</button>
+		</section>
+		</div>
 		<script src="app.js"></script>
 	</body>
 	</html>

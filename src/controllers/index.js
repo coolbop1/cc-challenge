@@ -1,4 +1,5 @@
 import {intoArray} from "../services";
+import jwt from "jsonwebtoken";
 
 module.exports = {
 	
@@ -24,5 +25,50 @@ module.exports = {
   
 addToArray()
 	
+   },
+   showtoken : (req,res) => {
+   	let {contact} =  req.token.user;
+  // console.log(contact);
+  if(req.action == "del"){
+   		let found = contact.find(u => {return u.id == req.search;});
+   		let index = contact.indexOf(found); if (index > -1) { 
+   		contact.splice(index, 1);
+   		for(let it = 0; it < contact.length;it++){
+			let resetId = it + 1;
+			contact[it].id = resetId; 
+		}
+		let contactss = {
+					contact : contact
+				}
+		let newToken = jwt.sign({user : contactss}, "ourlittlesecret", { expiresIn: "24h" });//expires in 24 hours }
+   		res.status(200).send({
+   		status:"success",
+   		newtoken : newToken,
+   		data:contact
+   		
+   		});
+   		}
+   		 }else{
+   	res.status(200).send({
+   		status:"success",
+   		data:contact
+   		
+   		});
+   		}
+   },
+   specific : (req,res) => {
+   	
+   	let {contact} =  req.token.user;
+   	let found = contact.find(u => {return u.id == req.search;});
+if(found){
+  // 	console.log(found);
+   res.status(200).send({
+   		status:"success",
+   		data:found
+   		
+   		});	
+   		
+   		}
+   
    }
 }

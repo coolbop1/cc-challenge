@@ -9,19 +9,20 @@ header{
     
 }
 a{
-    text-decoration: none;
+	text-decoration:none;
+	cursor:pointer;
 }
 #htag{
 	position:absolute;
-	top:-20px;
+	top:-24px;
 	right:10px;
 	color:white;
 	background:navy;
 	padding:10px;
-    min-width:50px;
-    cursor:pointer;
+	min-width:50px;
+	cursor:pointer;
 }
-button{
+#add{
     margin:20px 0;
     padding:10px 5px; 
     border-style: none;
@@ -31,9 +32,23 @@ button{
     font-weight: 600;
     margin-left: 20px;
 }
-button:hover{
-    color:#fff;
-    background: navy;
+#add:hover{
+	color:#fff;
+ background: navy;
+}
+#remove{
+			margin:20px 0;
+    padding:10px 5px; 
+    border-style: none;
+    border: 2px solid red;
+    color:red;
+    background: #fff;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#remove:hover{
+	color:#fff;
+ background: red;
 }
 h1{
     color:navy;
@@ -78,7 +93,7 @@ input{
 	width:calc(100% - 120px);
 	padding:10px;
 }
-section{
+#sect{
 	position:relative;
 }
 .success{
@@ -88,4 +103,30 @@ section{
 .warn{
 	background:#ff0000;
 	color:black;
+}
+.single{
+	border:2px solid #dfe2db;
+	background:white;
+	position:relative;
+	padding:10px;
+	width:calc(100% - 120px);
+	left:50px;
+	float:none;
+	clear:both;
+	border-radius:5px;
+}
+#onecontact{
+	padding-top:50px;
+}
+table{
+	width:100%;
+}
+td{
+	border:1px solid #dfe2db;
+}
+@media only screen and (max-width:768px){
+	.singleone{
+    width: 100%;
+    
+}
 }

@@ -1,6 +1,6 @@
 import express from "express";
-import {validateinputs,savedData} from "../middleware/validateinput";
-import {maketoken} from "../controllers"
+import {delaction,getaction,validateparam,validateinputs,savedData} from "../middleware/validateinput";
+import {maketoken,showtoken,specific} from "../controllers"
 import bodyParser from "body-parser";
 const route = express.Router();
 
@@ -13,8 +13,12 @@ const route = express.Router();
 	next();
 	});
 
-let contact = [];
 
 route.post("/api/contact",validateinputs,savedData,maketoken);
+route.delete("/api/contact/:contactid",validateparam,delaction,savedData,showtoken);
+
+route.get("/api/contact",getaction,savedData,showtoken);
+
+route.get("/api/contact/:contactid",validateparam,savedData,specific);
 
  module.exports = route;
